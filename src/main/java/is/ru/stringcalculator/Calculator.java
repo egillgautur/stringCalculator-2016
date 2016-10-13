@@ -8,9 +8,18 @@ public class Calculator {
     public static int add(String numbers) {
         if (numbers.isEmpty()) {
             return 0;
-        } else {
+        } else if(numbers.length() == 1) {
             return Integer.parseInt(numbers);
+        } else {
+            String[] splitStr = numbers.split(",");
+            String number1 = splitStr[0];
+            String number2 = splitStr[1];
+            int nr1 = Integer.parseInt(number1);
+            int nr2 = Integer.parseInt(number2);
+
+            return nr1 + nr2;
         }
     }
 }
+
 
