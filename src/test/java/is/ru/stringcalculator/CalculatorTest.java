@@ -6,5 +6,5 @@ import org.junit.rules.ExpectedException;
 import org.junit.Rule;
 
 public class CalculatorTest {
-
+    return 0;
 }
