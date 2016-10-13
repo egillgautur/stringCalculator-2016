@@ -11,13 +11,15 @@ public class Calculator {
         } else if(numbers.length() == 1) {
             return Integer.parseInt(numbers);
         } else {
-            String[] splitStr = numbers.split(",");
-            String number1 = splitStr[0];
-            String number2 = splitStr[1];
-            int nr1 = Integer.parseInt(number1);
-            int nr2 = Integer.parseInt(number2);
+            String[] splitStr = numbers.split(",|\n");
+            int sum = 0;
+            for(int i = 0; i < splitStr.length; i++) {
+                String str = splitStr[i];
+                int nr = Integer.parseInt(str);
+                sum += nr;
+            }
 
-            return nr1 + nr2;
+            return sum;
         }
     }
 }
