@@ -19,7 +19,11 @@ public class Calculator {
                 if(nr < 0) {
                     throw new RuntimeException();
                 }
-                sum += nr;
+
+                if(nr < 1001) {
+                    sum += nr;
+                }
+                
             }
 
             return sum;
