@@ -11,7 +11,14 @@ public class Calculator {
         } else if(numbers.length() == 1) {
             return Integer.parseInt(numbers);
         } else {
-            String[] splitStr = numbers.split(",|\n");
+            String[] splitStr;
+
+            if(numbers.startsWith("//")) {
+                splitStr = customDelimeter(numbers);
+            } else {
+                splitStr = numbers.split(",|\n");
+            }
+
             int sum = 0;
             for(int i = 0; i < splitStr.length; i++) {
                 String str = splitStr[i];
@@ -29,6 +36,16 @@ public class Calculator {
             return sum;
         }
     }
+
+    private static String[] customDelimeter(String text) {
+        Matcher match = Pattern.compile("//(.)\n(.*)").matcher(text);
+        match.matches();
+        String cstmDelimeter = match.group(1);
+        String numbers = match.group(2);
+
+        return numbers.split(Pattern.quote(cstmDelimeter));
+    }
 }
+
 
 
