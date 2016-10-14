@@ -42,7 +42,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDelimiter(){
+    public void testDifferentDelimiter(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 }

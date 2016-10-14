@@ -30,13 +30,13 @@ public class Calculator {
                 if(nr < 1001) {
                     sum += nr;
                 }
-                
             }
 
             return sum;
         }
     }
 
+    //Re-using this code from my previous TDD excercise
     private static String[] customDelimeter(String text) {
         Matcher match = Pattern.compile("//(.)\n(.*)").matcher(text);
         match.matches();
