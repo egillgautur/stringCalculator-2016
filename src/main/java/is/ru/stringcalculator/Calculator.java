@@ -16,6 +16,9 @@ public class Calculator {
             for(int i = 0; i < splitStr.length; i++) {
                 String str = splitStr[i];
                 int nr = Integer.parseInt(str);
+                if(nr < 0) {
+                    throw new RuntimeException();
+                }
                 sum += nr;
             }
 

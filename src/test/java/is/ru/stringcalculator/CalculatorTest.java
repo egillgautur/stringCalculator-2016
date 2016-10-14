@@ -30,4 +30,9 @@ public class CalculatorTest {
     public void testNewLine() {
         assertEquals(11, Calculator.add("1\n2,3\n5"));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void testNegative() {
+        Calculator.add("-1,2");
+    }
 }
